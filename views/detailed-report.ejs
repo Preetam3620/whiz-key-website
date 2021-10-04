@@ -1,0 +1,134 @@
+<%- include('partials/header') %>
+
+
+    <!--====form section start====-->
+    <div class="container-fluid summary-report-table col-md jumbotron ">
+        <h3>Product Number: <%= productNumber %>
+        </h3>
+        <h5>Date: <%= date %>, Time: <%= time %>
+        </h5>
+        <div class="table-wrapper-scroll-x my-custom-scrollbar">
+            <table class="table table-dark table-hover table-data" cellspacing="0" width="100%">
+                <tr>
+                    <th>Itr</th>
+                    <th>Status</th>
+                    <th>Action 1</th>
+                    <th>Wgt 1</th>
+                    <th>Temp 1</th>
+                    <th>Action 2</th>
+                    <th>Mot1 Dir</th>
+                    <th>Mot1 Status</th>
+                    <th>Channel1 Status</th>
+                    <th>Wgt 2</th>
+                    <th>Temp 2</th>
+                    <th>Action 3</th>
+                    <th>Mot2 Dir</th>
+                    <th>Mot2 Status</th>
+                    <th>Channel2 Status</th>
+                    <th>Wgt 3</th>
+                    <th>Temp 3</th>
+                    <th>Action 4</th>
+                    <th>Wgt 4</th>
+                    <th>Temp 4</th>
+                    <th>Action 5</th>
+                    <th>Wgt 5</th>
+                    <th>Action 6</th>
+                    <th>Wgt 6</th>
+                    <th>Temp 6</th>
+
+
+                </tr>
+
+                <% cycles.forEach(function(data,index) { %>
+                    <tr>
+                        <td>
+                            <%= index+1 %>
+                        </td>
+
+                        <% if(data.Status==='Pass' ) { %>
+                            <td>
+                                <p style="color:#A8F72E">Pass</p>
+                            </td>
+                            <% } else { %>
+                                <td>
+                                    <p style="color:#FF3C00">Fail</a>
+                                </td>
+                                <% } %>
+
+                                    <td>
+                                        <%=data.Action1%>
+                                    </td>
+                                    <td>
+                                        <%=data.Weight1%>
+                                    </td>
+                                    <td>
+                                        <%=data.Temp1%>
+                                    </td>
+                                    <td>
+                                        <%=data.Action2%>
+                                    </td>
+                                    <td>
+                                        <%=data.Motor1_Dir%>
+                                    </td>
+                                    <td>
+                                        <%=data.Motor1_Status%>
+                                    </td>
+                                    <td>
+                                        <%=data.Channel1_Status%>
+                                    </td>
+                                    <td>
+                                        <%=data.Weight2%>
+                                    </td>
+                                    <td>
+                                        <%=data.Temp2%>
+                                    </td>
+                                    <td>
+                                        <%=data.Action3%>
+                                    </td>
+                                    <td>
+                                        <%=data.Motor2_Dir%>
+                                    </td>
+                                    <td>
+                                        <%=data.Motor2_Status%>
+                                    </td>
+                                    <td>
+                                        <%=data.Channel2_Status%>
+                                    </td>
+                                    <td>
+                                        <%=data.Weight3%>
+                                    </td>
+                                    <td>
+                                        <%=data.Temp3%>
+                                    </td>
+                                    <td>
+                                        <%=data.Action4%>
+                                    </td>
+                                    <td>
+                                        <%=data.Weight4%>
+                                    </td>
+                                    <td>
+                                        <%=data.Temp4%>
+                                    </td>
+                                    <td>
+                                        <%=data.Action5%>
+                                    </td>
+                                    <td>
+                                        <%=data.Weight5%>
+                                    </td>
+                                    <td>
+                                        <%=data.Action6%>
+                                    </td>
+                                    <td>
+                                        <%=data.Weight6%>
+                                    </td>
+                                    <td>
+                                        <%=data.Temp6%>
+                                    </td>
+
+                    </tr>
+                    <% }) %>
+            </table>
+        </div>
+    </div>
+
+<%- include('partials/footer') %>

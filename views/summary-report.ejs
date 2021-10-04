@@ -1,0 +1,57 @@
+<%- include('partials/header') %>
+
+
+	<div class="container-fluid summary-report-table col-md jumbotron">
+		<h3>
+			<%= title %>
+		</h3>
+
+		<% var failed=0, passed=0; allReports.forEach(element=> {
+			element.status ? passed += 1 : failed +=1;
+			});
+			%>
+
+			<h5>Total Products - Tested: <%= allReports.length %>, Passed: <%= passed %>, Failed: <%= failed %>
+			</h5>
+
+			<table border="1" class="table table-dark table-hover table-sm table-bordered table-responsive table-data">
+
+				<tr>
+					<th>Sr</th>
+					<th>Time</th>
+					<th>Date</th>
+					<th>Product Number</th>
+					<th>Status</th>
+				</tr>
+
+				<% allReports.forEach((element, index)=> { %>
+					<tr>
+						<td>
+							<%= index+1 %>
+						</td>
+						<td>
+							<%= element.time %>
+						</td>
+						<td>
+							<%= element.date %>
+						</td>
+						<td>
+							<%= element.productNumber %>
+						</td>
+
+						<% if(element.status) { %>
+							<td>
+								<p style="color:#A8F72E">Pass</p>
+							</td>
+						<% } else { %>
+								<td>
+									<p><a style="color:#FF3C00" href="/detailed-report/<%=element._id%>">Fail</a> </p>
+								</td>
+						<% } %>
+					</tr>
+
+					<% }); %>
+			</table>
+	</div>
+
+	<%- include('partials/footer') %>
