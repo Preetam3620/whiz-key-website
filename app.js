@@ -20,6 +20,7 @@ mongoose.connect(
   { useNewUrlParser: true, useUnifiedTopology: true, }
 );
 
+// cycleSchema is structure of all values that are present in one cycle and their respective data types.
 const cycleSchema = new mongoose.Schema({
   Action1: String,
   Weight1: String,
@@ -48,7 +49,7 @@ const cycleSchema = new mongoose.Schema({
   Status: String,
 });
 
-
+// reportSchema is the structure of a report having n number of cycles
 const reportSchema = new mongoose.Schema({
   cycles: [cycleSchema],
   productNumber: String,
@@ -59,6 +60,13 @@ const reportSchema = new mongoose.Schema({
 
 const Report = mongoose.model("reports", reportSchema);
 
+function getToday() {
+  var today = new Date();
+  var dd = String(today.getDate()).padStart(2, '0');
+  var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+  var yyyy = today.getFullYear();
+  return yyyy + '-' + mm + '-' + dd;
+}
 
 // Summary Reports of the day
 app.get("/", function (req, res) {
@@ -87,7 +95,7 @@ app.post('/summary-between-dates', (req, res) => {
 // Latest Detailed Report
 app.get("/latest-detailed-report", (req, res) => {  
   today = getToday();
-  Report.findOne({date: today}, (err, report) => {
+  Report.findOne({}, (err, report) => {
     res.render("detailed-report", {
       productNumber: report.productNumber,
       cycles: report.cycles,
@@ -128,18 +136,9 @@ app.post('/product-detailed-report', (req, res) => {
     } else {
       res.redirect("/")
     }
-    
   }).sort( {time: -1});
 
 });
 
 
 app.listen(process.env.PORT || 3000, () => console.log("___Server has started sucessfully."));
-
-function getToday() {
-  var today = new Date();
-  var dd = String(today.getDate()).padStart(2, '0');
-  var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-  var yyyy = today.getFullYear();
-  return yyyy + '-' + mm + '-' + dd;
-}

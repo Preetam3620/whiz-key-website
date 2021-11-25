@@ -7,5 +7,5 @@
 // document.getElementById('idate1').value = new Date().toDateInputValue();
 
 $(document).ready( function() {
-    $('#idate1').val(new Date().toDateInputValue());
+    $('#theDate1').val(new Date().toDateInputValue());
 });​
