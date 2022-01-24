@@ -22,30 +22,18 @@ mongoose.connect(
 
 // cycleSchema is structure of all values that are present in one cycle and their respective data types.
 const cycleSchema = new mongoose.Schema({
-  Action1: String,
-  Weight1: String,
-  Temp1: String,
-  Action2: String,
-  Motor1_Dir: String,
-  Motor1_Status: String,
-  Channel1_Status: String,
-  Weight2: String,
-  Temp2: String,
-  Action3: String,
-  Motor2_Dir: String,
-  Motor2_Status: String,
-  Channel2_Status: String,
-  Weight3: String,
-  Temp3: String,
-  Action4: String,
-  Weight4: String,
-  Temp4: String,
-  Action5: String,
-  Weight5: String,
-  Temp5: String,
-  Action6: String,
-  Weight6: String,
-  Temp6: String,
+  Criteria: String,
+  GearBox1: String,
+  GearBox2: String,
+  GearBox3: String,
+  Mixer1: String,
+  Mixer2: String,
+  Mixer3: String,
+  WaterMixer1: String,
+  WaterMixer2: String,
+  WaterMixer3: String,
+  Temp: String,
+  Weight: String,
   Status: String,
 });
 
@@ -56,6 +44,8 @@ const reportSchema = new mongoose.Schema({
   status: Boolean,
   date: String,
   time: String,
+  WaterFillingTime: String,
+  WaterHeatingTime: String,
 });
 
 const Report = mongoose.model("reports", reportSchema);
@@ -100,6 +90,8 @@ app.get("/latest-detailed-report", (req, res) => {
       productNumber: report.productNumber,
       cycles: report.cycles,
       status: report.status,
+      wft: report.wft,
+      wht: report.wht,
       time: report.time,
       date: report.date,
     });

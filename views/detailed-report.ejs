@@ -7,35 +7,25 @@
         </h3>
         <h5>Date: <%= date %>, Time: <%= time %>
         </h5>
+        <h5>Water Filling Time: <%= wft %></h5>
+        <h5>Water Heating Time: <%= wht %></h5>
         <div class="table-wrapper-scroll-x my-custom-scrollbar">
             <table class="table table-dark table-hover table-data" cellspacing="0" width="100%">
                 <tr>
                     <th>Itr</th>
+                    <th>Criteria</th>
+                    <th>Gear Box1</th>
+                    <th>Gear Box2</th>
+                    <th>Gear Box3</th>
+                    <th>Mixer1</th>
+                    <th>Mixer2</th>
+                    <th>Mixer3</th>
+                    <th>Water in Mixer1</th>
+                    <th>Water in Mixer2</th>
+                    <th>Water in Mixer3</th>
+                    <th>Temp</th>
+                    <th>Weight</th>
                     <th>Status</th>
-                    <th>Action 1</th>
-                    <th>Wgt 1</th>
-                    <th>Temp 1</th>
-                    <th>Action 2</th>
-                    <th>Mot1 Dir</th>
-                    <th>Mot1 Status</th>
-                    <th>Channel1 Status</th>
-                    <th>Wgt 2</th>
-                    <th>Temp 2</th>
-                    <th>Action 3</th>
-                    <th>Mot2 Dir</th>
-                    <th>Mot2 Status</th>
-                    <th>Channel2 Status</th>
-                    <th>Wgt 3</th>
-                    <th>Temp 3</th>
-                    <th>Action 4</th>
-                    <th>Wgt 4</th>
-                    <th>Temp 4</th>
-                    <th>Action 5</th>
-                    <th>Wgt 5</th>
-                    <th>Action 6</th>
-                    <th>Wgt 6</th>
-                    <th>Temp 6</th>
-
 
                 </tr>
 
@@ -56,73 +46,43 @@
                                 <% } %>
 
                                     <td>
-                                        <%=data.Action1%>
+                                        <%=data.Criteria%>
                                     </td>
                                     <td>
-                                        <%=data.Weight1%>
+                                        <%=data.GearBox1%>
                                     </td>
                                     <td>
-                                        <%=data.Temp1%>
+                                        <%=data.GearBox2%>
                                     </td>
                                     <td>
-                                        <%=data.Action2%>
+                                        <%=data.GearBox3%>
                                     </td>
                                     <td>
-                                        <%=data.Motor1_Dir%>
+                                        <%=data.Mixer1%>
                                     </td>
                                     <td>
-                                        <%=data.Motor1_Status%>
+                                        <%=data.Mixer2%>
                                     </td>
                                     <td>
-                                        <%=data.Channel1_Status%>
+                                        <%=data.Mixer3%>
                                     </td>
                                     <td>
-                                        <%=data.Weight2%>
+                                        <%=data.WaterMixer1%>
                                     </td>
                                     <td>
-                                        <%=data.Temp2%>
+                                        <%=data.WaterMixer2%>
                                     </td>
                                     <td>
-                                        <%=data.Action3%>
+                                        <%=data.WaterMixer3%>
                                     </td>
                                     <td>
-                                        <%=data.Motor2_Dir%>
+                                        <%=data.Temp%>
                                     </td>
                                     <td>
-                                        <%=data.Motor2_Status%>
+                                        <%=data.Weight%>
                                     </td>
                                     <td>
-                                        <%=data.Channel2_Status%>
-                                    </td>
-                                    <td>
-                                        <%=data.Weight3%>
-                                    </td>
-                                    <td>
-                                        <%=data.Temp3%>
-                                    </td>
-                                    <td>
-                                        <%=data.Action4%>
-                                    </td>
-                                    <td>
-                                        <%=data.Weight4%>
-                                    </td>
-                                    <td>
-                                        <%=data.Temp4%>
-                                    </td>
-                                    <td>
-                                        <%=data.Action5%>
-                                    </td>
-                                    <td>
-                                        <%=data.Weight5%>
-                                    </td>
-                                    <td>
-                                        <%=data.Action6%>
-                                    </td>
-                                    <td>
-                                        <%=data.Weight6%>
-                                    </td>
-                                    <td>
-                                        <%=data.Temp6%>
+                                        <%=data.Status%>
                                     </td>
 
                     </tr>
@@ -131,4 +91,4 @@
         </div>
     </div>
 
-<%- include('partials/footer') %>
+    <%- include('partials/footer') %>
