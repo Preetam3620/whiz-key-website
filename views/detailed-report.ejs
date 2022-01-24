@@ -7,8 +7,10 @@
         </h3>
         <h5>Date: <%= date %>, Time: <%= time %>
         </h5>
-        <h5>Water Filling Time: <%= wft %></h5>
-        <h5>Water Heating Time: <%= wht %></h5>
+        <h5>Water Filling Time: <%= WaterFillingTime %>
+        </h5>
+        <h5>Water Heating Time: <%= WaterHeatingTime %>
+        </h5>
         <div class="table-wrapper-scroll-x my-custom-scrollbar">
             <table class="table table-dark table-hover table-data" cellspacing="0" width="100%">
                 <tr>
@@ -34,54 +36,52 @@
                         <td>
                             <%= index+1 %>
                         </td>
+                        <td>
+                            <%=data.Criteria%>
+                        </td>
+                        <td>
+                            <%=data.GearBox1%>
+                        </td>
+                        <td>
+                            <%=data.GearBox2%>
+                        </td>
+                        <td>
+                            <%=data.GearBox3%>
+                        </td>
+                        <td>
+                            <%=data.Mixer1%>
+                        </td>
+                        <td>
+                            <%=data.Mixer2%>
+                        </td>
+                        <td>
+                            <%=data.Mixer3%>
+                        </td>
+                        <td>
+                            <%=data.WaterMixer1%>
+                        </td>
+                        <td>
+                            <%=data.WaterMixer2%>
+                        </td>
+                        <td>
+                            <%=data.WaterMixer3%>
+                        </td>
+                        <td>
+                            <%=data.Temp%>
+                        </td>
+                        <td>
+                            <%=data.Weight%>
+                        </td>
 
-                
-                                    <td>
-                                        <%=data.Criteria%>
-                                    </td>
-                                    <td>
-                                        <%=data.GearBox1%>
-                                    </td>
-                                    <td>
-                                        <%=data.GearBox2%>
-                                    </td>
-                                    <td>
-                                        <%=data.GearBox3%>
-                                    </td>
-                                    <td>
-                                        <%=data.Mixer1%>
-                                    </td>
-                                    <td>
-                                        <%=data.Mixer2%>
-                                    </td>
-                                    <td>
-                                        <%=data.Mixer3%>
-                                    </td>
-                                    <td>
-                                        <%=data.WaterMixer1%>
-                                    </td>
-                                    <td>
-                                        <%=data.WaterMixer2%>
-                                    </td>
-                                    <td>
-                                        <%=data.WaterMixer3%>
-                                    </td>
-                                    <td>
-                                        <%=data.Temp%>
-                                    </td>
-                                    <td>
-                                        <%=data.Weight%>
-                                    </td>
-
-                                    <% if(data.Status==='OK' ) { %>
-                                        <td>
-                                            <p style="color:#A8F72E">PASS</p>
-                                        </td>
-                                        <% } else { %>
-                                            <td>
-                                                <p style="color:#FF3C00">Fail</a>
-                                            </td>
-                                            <% } %>
+                        <% if(data.Status==='true' ) { %>
+                            <td>
+                                <p style="color:#A8F72E">Pass</p>
+                            </td>
+                            <% } else { %>
+                                <td>
+                                    <p style="color:#FF3C00">Fail</a>
+                                </td>
+                                <% } %>
 
                     </tr>
                     <% }) %>
