@@ -35,16 +35,7 @@
                             <%= index+1 %>
                         </td>
 
-                        <% if(data.Status==='Pass' ) { %>
-                            <td>
-                                <p style="color:#A8F72E">Pass</p>
-                            </td>
-                            <% } else { %>
-                                <td>
-                                    <p style="color:#FF3C00">Fail</a>
-                                </td>
-                                <% } %>
-
+                
                                     <td>
                                         <%=data.Criteria%>
                                     </td>
@@ -84,6 +75,16 @@
                                     <td>
                                         <%=data.Status%>
                                     </td>
+
+                                    <% if(data.Status==='OK' ) { %>
+                                        <td>
+                                            <p style="color:#A8F72E">PASS</p>
+                                        </td>
+                                        <% } else { %>
+                                            <td>
+                                                <p style="color:#FF3C00">Fail</a>
+                                            </td>
+                                            <% } %>
 
                     </tr>
                     <% }) %>
