@@ -106,6 +106,8 @@ app.get("/detailed-report/:id", (req, res) => {
       productNumber: report.productNumber,
       cycles: report.cycles,
       status: report.status,
+      wft: report.wft,
+      wht: report.wht,
       time: report.time,
       date: report.date,
     });
@@ -122,6 +124,8 @@ app.post('/product-detailed-report', (req, res) => {
         productNumber: report.productNumber,
         cycles: report.cycles,
         status: report.status,
+        wft: report.wft,
+        wht: report.wht,
         time: report.time,
         date: report.date,
       });
